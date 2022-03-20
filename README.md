@@ -1,6 +1,6 @@
-# SeqIdCalc
+# Sim Genomes
 
-Reclassifies the variants output by vcfeval that been incorrectly evaluated. It also checks for incorrect evaluation due to left-alignment of variants thus requires the reference FASTA file. New VCF files are written containing the corrected true positive, false positive and false negative calls. 
+Given a FASTA file, the script simulates the specified number of SNPs and indels within the genome. The simulated variants are also output in a VCF file. 
     
 &nbsp;
 
@@ -9,9 +9,9 @@ Reclassifies the variants output by vcfeval that been incorrectly evaluated. It 
 
 ## Usage
 
-Takes the reference FASTA file, truthset VCF file, calls VCF file and vcfeval directory path as input. Outputs the corrected TP, FP and FN VCF files within the vcfeval directory.
+Takes the no. of SNPs to be induced, the no. of indels to be induced, the reference FASTA file and the name of the output file as input arguments. Outputs the genome sequence of the simulated sequence in a FASTA file and the variants simulated in a VCF file.
 
 The script should be run with the following commands:
 ```python
-python vcfeval_filter.py reference truthset called_vcf vcfeval_dir
+python vcfeval_filter.py snps indels seq_file out_file
 ```
